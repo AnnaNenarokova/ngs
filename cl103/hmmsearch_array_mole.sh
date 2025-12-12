@@ -16,7 +16,7 @@ hmm_dir="/home/users/nenarokova/daria/cl103/phylogenetics/individual_hmms_tigr_g
 hmm_results_dir="/home/users/nenarokova/daria/cl103/phylogenetics/hmm_markers_results/"
 
 cd $hmm_dir
-hmm_file=$(ls *.hmm | sed -n ${SLURM_ARRAY_TASK_ID}p)
+hmm_file=$(ls *.HMM | sed -n ${SLURM_ARRAY_TASK_ID}p)
 hmm_path=$hmm_dir$hmm_file
 echo $hmm_path
 
