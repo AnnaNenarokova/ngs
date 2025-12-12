@@ -11,8 +11,8 @@
 
 module load hmmer3.3
 
-subject_dir="/scratch/nenarokova/euk/proteomes/anna_eukprot3_v2_21_06_23/"
-hmm_dir="//home/users/nenarokova/daria/cl103/phylogenetics/individual_hmms_tigr_gtdb/"
+subject_dir="/home/users/nenarokova/daria/cl103/phylogenetics/proteomes_bacteria/"
+hmm_dir="/home/users/nenarokova/daria/cl103/phylogenetics/individual_hmms_tigr_gtdb/"
 hmm_results_dir="/home/users/nenarokova/daria/cl103/phylogenetics/hmm_markers_results/"
 
 cd $hmm_dir
