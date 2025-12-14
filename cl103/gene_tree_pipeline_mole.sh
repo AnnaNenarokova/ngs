@@ -14,7 +14,7 @@ module load mafft
 module load BMGE-1.12
 module load iqtree-2.1.0
 
-workdir="/scratch/nenarokova/bacteria/markers/"
+workdir="/home/users/nenarokova/daria/cl103/phylogenetics/152_gtdb_markers/"
 fasta_dir="${workdir}/fasta/"
 linsi_dir="${workdir}/linsi/"
 trimmed_dir="${workdir}/linsi_bmge/"
