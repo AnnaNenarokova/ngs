@@ -10,7 +10,7 @@
 module load hmmer3.3
 
 proteome_dir="/home/users/nenarokova/daria/cl103/phylogenetics/proteomes_bacteria/"
-hmm_db="//home/users/nenarokova/daria/gtdb/release226/markers/tigrfam/tigrfam.hmm"
+hmm_db="/home/users/nenarokova/daria/gtdb/release226/markers/tigrfam/tigrfam.hmm"
 out_dir="/home/users/nenarokova/daria/cl103/phylogenetics/hmms/hmm_markers_results/"
 
 mkdir -p "$out_dir"
