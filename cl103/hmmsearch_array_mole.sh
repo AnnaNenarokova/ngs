@@ -1,32 +1,36 @@
 #!/bin/bash
-#SBATCH --job-name=bact_markers_hmm
-#SBATCH --output=/home/users/nenarokova/slurm_output/bact_marker_hmm_%A_%a.out
+#SBATCH --job-name=gtdb_markers_hmm
+#SBATCH --output=/home/users/nenarokova/slurm_output/gtdb_markers_hmm_%A_%a.out
 #SBATCH --time=7-12:00:00
-#SBATCH --array=1-152
+#SBATCH --array=1-133
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1
 #SBATCH --mem-per-cpu=1GB
-##SBATCH --nodes=1
-## --cpu_bind=v,threads
 
 module load hmmer3.3
 
-subject_dir="/home/users/nenarokova/daria/cl103/phylogenetics/proteomes_bacteria/"
-hmm_dir="/home/users/nenarokova/daria/cl103/phylogenetics/individual_hmms_tigr_gtdb/"
-hmm_results_dir="/home/users/nenarokova/daria/cl103/phylogenetics/hmm_markers_results/"
+proteome_dir="/home/users/nenarokova/daria/cl103/phylogenetics/proteomes_bacteria/"
+hmm_db="//home/users/nenarokova/daria/gtdb/release226/markers/tigrfam/tigrfam.hmm"
+out_dir="/home/users/nenarokova/daria/cl103/phylogenetics/hmms/hmm_markers_results/"
 
-cd $hmm_dir
-hmm_file=$(ls *.HMM | sed -n ${SLURM_ARRAY_TASK_ID}p)
-hmm_path=$hmm_dir$hmm_file
-echo $hmm_path
+mkdir -p "$out_dir"
 
-e_threshold="0.0000001"
+cd "$proteome_dir"
+proteome=$(ls *.fasta | sed -n "${SLURM_ARRAY_TASK_ID}p")
 
-cd $subject_dir
-for subject in *.fasta
-do
-	subject_path=$subject_dir$subject
-	result=$hmm_results_dir$subject$hmm_file".txt"
-	echo $result
-	hmmsearch -E $e_threshold --tblout $result $hmm_path $subject_path
-done
+if [[ -z "$proteome" ]]; then
+    echo "No proteome found for task ${SLURM_ARRAY_TASK_ID}"
+    exit 1
+fi
+
+proteome_path="${proteome_dir}${proteome}"
+tbl_out="${out_dir}${proteome}.tbl"
+domtbl_out="${out_dir}${proteome}.domtbl"
+log_out="${out_dir}${proteome}.hmmsearch.log"
+
+echo "Proteome:  $proteome_path"
+echo "HMM DB:    $hmm_db"
+echo "tblout:    $tbl_out"
+echo "domtblout: $domtbl_out"
+
+hmmsearch --noali --cut_ga --tblout "$tbl_out" --domtblout "$domtbl_out" "$hmm_db" "$proteome_path" > "$log_out"
