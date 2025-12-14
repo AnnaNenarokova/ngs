@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=bac_markers_trees
-#SBATCH --output=/scratch/nenarokova/code/slurm_out/bac_markers_trees_%A_%a.out
+#SBATCH --output=/home/users/nenarokova/slurm_output/bac_markers_trees_%A_%a.out
 #SBATCH --time=99-99:00:00
 #SBATCH --array=1-114
 #SBATCH --ntasks=1
