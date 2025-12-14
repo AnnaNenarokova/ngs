@@ -7,7 +7,7 @@
 #SBATCH --mem=8G
 
 # Load Python (adjust module name/version if needed on your cluster)
-module load python/3.10
+module load python-3.6
 
 SCRIPT="/home/users/nenarokova/ngs/cl103/write_marker_fastas_hmmresults.py"
 
