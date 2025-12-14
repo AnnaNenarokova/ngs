@@ -6,8 +6,6 @@
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=8G
 
-# Load Python (adjust module name/version if needed on your cluster)
-module load python-3.6
 
 SCRIPT="/home/users/nenarokova/ngs/cl103/write_marker_fastas_hmmresults.py"
 
@@ -18,7 +16,7 @@ OUT_DIR="/home/users/nenarokova/daria/cl103/phylogenetics/152_gtdb_markers/fasta
 echo "Job started on $(hostname)"
 echo "Start time: $(date)"
 
-python3 "$SCRIPT" \
+python "$SCRIPT" \
   --tbl_dir "$TBL_DIR" \
   --proteomes_dir "$PROTEOMES_DIR" \
   --out_dir "$OUT_DIR" \
