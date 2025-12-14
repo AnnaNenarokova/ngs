@@ -8,7 +8,7 @@
 
 SCRIPT="/home/users/nenarokova/ngs/cl103/write_marker_fastas_hmmresults.py"
 
-TBL_DIR="/home/users/nenarokova/daria/cl103/phylogenetics/hmms/hmm_markers_results/"
+TBL_DIR="/home/users/nenarokova/daria/cl103/phylogenetics/152_gtdb_markers/hmms/hmm_markers_results/"
 PROTEOMES_DIR="/home/users/nenarokova/daria/cl103/phylogenetics/proteomes_bacteria/"
 OUT_DIR="/home/users/nenarokova/daria/cl103/phylogenetics/152_gtdb_markers/fasta/"
 
