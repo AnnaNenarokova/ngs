@@ -16,7 +16,7 @@ OUT_DIR="/home/users/nenarokova/daria/cl103/phylogenetics/152_gtdb_markers/fasta
 echo "Job started on $(hostname)"
 echo "Start time: $(date)"
 
-python "$SCRIPT" \
+python3 "$SCRIPT" \
   --tbl_dir "$TBL_DIR" \
   --proteomes_dir "$PROTEOMES_DIR" \
   --out_dir "$OUT_DIR" \
