@@ -7,7 +7,7 @@
 #SBATCH --mem=8G
 
 # Load Python
-PYTHON="/usr/local/bin/python"
+PYTHON="/usr/bin/python"
 SCRIPT="/home/users/nenarokova/ngs/cl103/write_marker_fastas_hmmresults.py"
 
 TBL_DIR="/home/users/nenarokova/daria/cl103/phylogenetics/hmms/hmm_markers_results/"
