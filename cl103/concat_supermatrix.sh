@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=concat_supermatrix
-#SBATCH --output=/scratch/nenarokova/code/slurm_out/concat_supermatrix_%j.out
+#SBATCH --output=/home/users/nenarokova/slurm_output/concat_supermatrix_%j.out
 #SBATCH --time=01:00:00
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1
