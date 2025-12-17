@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=concat_supermatrix
 #SBATCH --output=/scratch/nenarokova/code/slurm_out/concat_supermatrix_%j.out
-#SBATCH --time=99:00:00
+#SBATCH --time=01:00:00
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=4G
@@ -10,11 +10,11 @@ set -euo pipefail
 
 module purge
 
-msa_dir="/scratch/nenarokova/bacteria/markers/linsi_bmge/"
-script="/scratch/nenarokova/bacteria/markers/scripts/concat_supermatrix.py"
-out_fasta="/scratch/nenarokova/bacteria/markers/supermatrix/supermatrix.fasta"
-out_part="/scratch/nenarokova/bacteria/markers/supermatrix/supermatrix.partitions"
-msa_ext=".fasta.bmge.aln"
+script="/home/users/nenarokova/ngs/cl103/concat_supermatrix.py"
+msa_dir="//home/users/nenarokova/daria/cl103/phylogenetics/152_gtdb_markers/linsi_bmge/"
+out_fasta="/home/users/nenarokova/daria/cl103/phylogenetics/152_gtdb_markers/supermatrix/114_gtdb_markers_133_proteomes.fasta"
+out_part="/home/users/nenarokova/daria/cl103/phylogenetics/152_gtdb_markers/supermatrix/114_gtdb_markers_133_proteomes.partitions"
+msa_ext=".aln"
 taxon_mode="before_pipe"
 
 echo "[$(date)] Job started on $(hostname)"
