@@ -1,7 +1,6 @@
 !/bin/bash
 #SBATCH --job-name=iqtree_C60_compare
 #SBATCH --output=/home/users/nenarokova/slurm_output/iqtree_C60_compare_%A.out
-#SBATCH --partition=high
 #SBATCH --time=7-12:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
