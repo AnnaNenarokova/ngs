@@ -9,6 +9,9 @@
 
 module load iqtree-2.1.0
 
+workdir="/home/users/nenarokova/daria/cl103/phylogenetics/152_gtdb_markers/supermatrix/model_tester"
+
 msa="/home/users/nenarokova/daria/cl103/phylogenetics/152_gtdb_markers/supermatrix/114_gtdb_markers_133_proteomes.fasta"
 
+cd $workdir
 iqtree2 -s "$msa" -T 8 -m MF -mset LG -madd C10,C20,C30,C40,C50,C60 -mrate G --score-diff all -mem 250G

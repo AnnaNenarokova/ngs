@@ -11,6 +11,9 @@ set -euo pipefail
 
 module load iqtree-2.1.0
 
+workdir="/home/users/nenarokova/daria/cl103/phylogenetics/152_gtdb_markers/supermatrix/model_tester"
+
 msa="/home/users/nenarokova/daria/cl103/phylogenetics/152_gtdb_markers/supermatrix/114_gtdb_markers_133_proteomes.fasta"
 
+cd $workdir
 iqtree2 -s "$msa" -T 8 -m LG+C60+G8 --score-diff all -mem 250G -redo -pre C60_G_compare
