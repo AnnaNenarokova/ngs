@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 #SBATCH --job-name=iqtree_C60_compare
 #SBATCH --output=/home/users/nenarokova/slurm_output/iqtree_C60_compare_%A.out
 #SBATCH --time=7-12:00:00
